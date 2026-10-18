@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Корзина — Вольт</title>
+</head>
+<body>
+<main class="wrap">
+  <h1 style="padding-top:1.5rem">Корзина</h1>
+  <div class="cart" id="cart">
+    <div class="lines" id="lines"></div>
+    <aside class="summary">
+      <div class="row"><span>Товары</span><span id="sum"></span></div>
+      <div class="row" id="discountRow" hidden><span>Скидка</span><span id="discount"></span></div>
+      <div class="row"><span>Доставка</span><span id="delivery"></span></div>
+      <p class="msg" id="freeHint"></p>
+      <div class="row total"><span>Итого</span><span id="total"></span></div>
+      <div class="promo-row"><input id="promo" placeholder="Промокод" aria-label="Промокод"><button class="btn sec" type="button" id="applyPromo">Применить</button></div>
+      <p class="msg" id="promoMsg" role="status"></p>
+      <form class="checkout" id="checkout" novalidate>
+        <div class="radio-row" role="radiogroup" aria-label="Способ получения">
+          <label><input type="radio" name="delivery" value="courier" checked> Курьер</label>
+          <label><input type="radio" name="delivery" value="pickup"> Самовывоз</label>
+        </div>
+        <label>Имя<input name="name" autocomplete="name"></label>
+        <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>
+        <label id="addressField">Адрес<input name="address" autocomplete="street-address" placeholder="Улица, дом, квартира"></label>
+        <button class="btn" type="submit">Оформить заказ</button>
+        <p class="msg" id="orderMsg" role="alert"></p>
+      </form>
+    </aside>
+  </div>
+</main>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
